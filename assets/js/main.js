@@ -27,6 +27,20 @@
 			}, 100);
 		});
 
+		const one = document.getElementById('banner')
+
+		window.addEventListener('scroll', () => {
+			let scrollY = window.scrollY
+			let bottomHeight = window.innerHeight
+
+			if(scrollY / bottomHeight <= 1) {
+				var opac = 1 - 2*( scrollY / bottomHeight )
+				one.style.opacity = opac
+				//one.style.background = "linear-gradient(to top, rgba(190, 190, 190, " + opac + "), rgba(149, 149, 149, " + opac + ")), url(../../images/bg.jpg)";
+			}
+			
+		})
+
 	// Header.
 		if ($banner.length > 0
 		&&	$header.hasClass('alt')) {
